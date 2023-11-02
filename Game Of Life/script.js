@@ -138,6 +138,7 @@ function setup() {
 
                 }
         }
+        console.log("helo vorld");
 }
 
 function draw() {
