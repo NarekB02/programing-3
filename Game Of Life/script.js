@@ -208,3 +208,28 @@ function draw() {
         }
 }
 
+
+
+
+// let name="poghod"
+// let student = {
+//         name:"poghod",
+//         age:33,
+//         isTumoStudent:true,
+//         showInfo(){
+//                 console.log(this.name,this.age)
+//         }
+// }
+
+// student.showInfo()
+
+//console.log(student.name);
+
+
+
+// let erexa = new Child("Artur", 18, "male");
+// erexa.jump()
+//  erexa.speak();
+//  erexa.walk();
+
+// console.log(erexa.name,erexa.gen);
