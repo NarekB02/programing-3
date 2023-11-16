@@ -1,8 +1,12 @@
-class LivingGreature{
+module.exports = class LivingGreature{
     constructor(x,y){
         this.x=x;
         this.y=y;
         this.multiply = 0;
+        
+    }
+
+        getNewDirections(){
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -14,8 +18,10 @@ class LivingGreature{
             [this.x + 1, this.y + 1]
         ];
     }
+    
         chooseCell(character) {
-        var found = [];
+            this.getNewDirections()
+            let found = [];
         for (let i = 0; i < this.directions.length; i++) {
             let x = this.directions[i][0];
             let y = this.directions[i][1];
@@ -28,5 +34,5 @@ class LivingGreature{
         }
         return found;
 
-}
+    }
 }
