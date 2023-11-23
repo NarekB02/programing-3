@@ -29,7 +29,7 @@ module.exports = class predator extends LivingCreature {
 
         let emptyCells = super.chooseCell(0)
         let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
-        console.log(newCell, 'predator');
+        // console.log(newCell, 'predator');
         if (newCell) {
             let newX = newCell[0]
             let newY = newCell[1]

@@ -27,7 +27,7 @@ module.exports = class dog extends LivingCreature {
 
         let emptyCells = super.chooseCell(0)
         let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
-        console.log(newCell, 'dog');
+        // console.log(newCell, 'dog');
         if (newCell) {
             let newX = newCell[0]
             let newY = newCell[1]

@@ -1,4 +1,4 @@
-const { Console } = require('console');
+// const { Console } = require('console');
 let express = require('express');
 let app = express();
 let server = require('http').Server(app);
@@ -134,12 +134,23 @@ Predator2 = require("./predator2")
 Dog = require("./dog")
 
 
+function handleWinter(data){
+        for (let y = 0; y < matrix.length; y++) {
+                for (let x = 0; x < matrix[0].length; x++) {
+                        if (matrix[y][x] == 1) {
+                                let gr = new Grass(x, y, 20)
+                                grassArr.push(gr);
+                        }
+                }
+        }
+        io.sockets.emit('send matrix', matrix)
+}
 
 function createObject(matrix) {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[0].length; x++) {
                 if (matrix[y][x] == 1) {
-                        let gr = new Grass(x, y)
+                        let gr = new Grass(x, y, 4)
                         grassArr.push(gr);
                 } else if (matrix[y][x] == 2) {
                         let grEat = new GrassEater(x, y)
@@ -165,8 +176,6 @@ function createObject(matrix) {
 
     io.sockets.emit('send matrix', matrix)
 }
-
-
 
 function game() {
     for (let i in grassArr) {
@@ -199,9 +208,7 @@ setInterval(game, 1000)
 io.on('connection', function (socket) {
     createObject(matrix);
 
-    socket.on("send weather", (info)=>{
-        console.log(info)
-    })
+    socket.on("winter", handleWinter);
 })
 
 
