@@ -1,9 +1,10 @@
 let LivingCreature = require('./LivingCreature')
 
 module.exports = class grassEater extends LivingCreature {
-    constructor(x, y) {
+    constructor(x, y, speed) {
         super(x, y);
         this.energy = 8
+        this.speed = speed;
     }
 
     mul() {
@@ -49,7 +50,7 @@ module.exports = class grassEater extends LivingCreature {
             this.x = newX
             this.y = newY
 
-            if (this.energy >= 12) {
+            if (this.energy >= this.speed) {
                 this.mul()
             }
 

@@ -6,11 +6,10 @@ module.exports = class grass extends LivingCreature {
         this.speed = speed;
     }
 
-    mul(tiv) {
+    mul() {
         this.multiply++
         let emptyCells = this.chooseCell(0)
         let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
-        //console.log(newCell, 'GRASSSSS');
 
         if (newCell && this.multiply >= this.speed) {
             let newX = newCell[0]

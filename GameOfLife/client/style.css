@@ -1,5 +1,80 @@
-/* canvas{
+button1{
+    border: none;
+    background: #0fbd29;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+button2{
+    border: none;
+    background: #ffef14;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+button3{
+    border: none;
+    background: #f7a740;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+button4{
+    border: none;
+    background: #7c9aed;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+button5{
+    border: none;
+    background: #ff0000;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+button6{
+    border: none;
+    background: #00ff13;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+button1:hover{
+    box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px #0fbd29;
+} 
+button2:hover{
+    box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px #ffef14;
+} 
+button3:hover{
+    box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px #f7a740;
+} 
+button4:hover{
+    box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px #7c9aed;
+} 
+button5:hover{
+    box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px #ff0000;
+}
+button6:hover{
+    box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px #00ff13;
+}
+
+canvas{
     margin-left: 30%;
+    align-items: center;
 }
 table{
     width: 70%;
@@ -7,9 +82,10 @@ table{
     margin-bottom: 40px;
 }
 table, td, th{
-    border: 1px solid rgb(179, 179, 179);
+     border: 1px solid rgb(179, 179, 179);
     text-align: center;
-    font-size: 20px;
+    font-size: 20px; 
+
 }
 
 .grass{
@@ -32,4 +108,9 @@ table, td, th{
 }
 .dog{
     background-color: rgb(238, 207, 33);
-} */
+}
+
+.buttonContainer{
+    text-align: center;
+    margin: 20px 20px;
+}

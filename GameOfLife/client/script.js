@@ -20,6 +20,21 @@ ashun.addEventListener("click", handleFall)
 let cmer = document.getElementById("Winter");
 cmer.addEventListener("click", handleWinter)
 
+let avart = document.getElementById("Game Over");
+avart.addEventListener("click",  handleGameOver)
+
+let skizp = document.getElementById("Game Start");
+skizp.addEventListener("click",  handleGameStart)
+
+
+function handleGameOver(event){
+        socket.emit("GameOver", "avart")
+
+}
+
+function handleGameStart(event){
+        socket.emit("GameStart", "skizp")
+}
 
 function handleSpring(event) {
 
@@ -31,7 +46,7 @@ function handleSpring(event) {
         predator2Color = "#ff4d4d"
         dogColor = "#994e18"
 
-
+        socket.emit("spring", "garun")
 }
 
 function handleSummer(event) {
@@ -44,6 +59,7 @@ function handleSummer(event) {
         predator2Color = "#e66565"
         dogColor = "#de6b18"
 
+        socket.emit("summer", "amar")
 }
 
 function handleFall(event) {
@@ -55,10 +71,10 @@ function handleFall(event) {
         predator2Color = "#ff7d7d"
         dogColor = "#bd601e"
 
+        socket.emit("fall", "ashun")
 }
 
 function handleWinter(event) {
-
         grassColor = "#ebf7ee"
         grassEaterColor = "#cacfcc"
         predatorColor = "#bf7171"
@@ -79,8 +95,7 @@ function setup() {
 
 
 function nkarel(matrix) {
-        // console.log(matrix);
-
+        
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
                         let toBot = side - side * 0.2
@@ -169,18 +184,3 @@ setInterval(
                 socket.on('send matrix', nkarel)
         }, 1000
 )
-
-
-
-
-//     function main() {
-//         let socket = io();
-//         let button = document.getElementById('Fall');
-
-//         function handleSubmit() {
-//         let val = input.value;
-//         if (val != "") {
-//         socket.emit("send message", val);
-//         }
-//         }
-//         button.onclick = handleSubmit;

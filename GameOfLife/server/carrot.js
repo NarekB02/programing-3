@@ -1,16 +1,18 @@
 let LivingCreature = require('./LivingCreature')
 
 module.exports = class carrot extends LivingCreature {
-    constructor(x, y) {
+    constructor(x, y, speed) {
         super(x, y);
+        this.speed = speed;
+
     }
 
     mul() {
         this.multiply++
         let emptyCells = super.chooseCell(0)
         let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
-        //console.log(newCell, 'carrot');
-        if (newCell && this.multiply >= 4) {
+
+        if (newCell && this.multiply >= this.speed) {
             let newX = newCell[0]
             let newY = newCell[1]
 

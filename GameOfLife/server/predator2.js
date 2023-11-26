@@ -2,9 +2,10 @@ let LivingCreature = require('./LivingCreature')
 
 
 module.exports = class predator2 extends LivingCreature {
-    constructor(x, y) {
+    constructor(x, y, speed) {
         super(x, y);
         this.energy = 8;
+        this.speed = speed;
     }
 
     chooseCell(character, character1) {
@@ -28,7 +29,6 @@ module.exports = class predator2 extends LivingCreature {
 
         let foods = super.chooseCell(0)
         let food = foods[Math.floor(Math.random() * foods.length)]
-        //console.log(food, 'predator2');
         if (food) {
             let newX = food[0]
             let newY = food[1]
@@ -72,7 +72,7 @@ module.exports = class predator2 extends LivingCreature {
             this.x = newX
             this.y = newY
 
-            if (this.energy >= 12) {
+            if (this.energy >= this.speed) {
                 this.mul()
             }
 
